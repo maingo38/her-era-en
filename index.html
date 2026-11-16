@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#2E2017" />
+  <title>HER ERA — Defined by Her.</title>
+  <meta name="description" content="HER ERA — a women's fashion label. Satin skirts that feel soft, elegant, and unmistakably you. Defined by Her." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #F0EBE1;
+      --surface: #FAF6EE;
+      --surface-2: #F7E9E6;
+      --espresso: #2E2017;
+      --espresso-soft: #6B584A;
+      --heart: #B9868C;
+      --line: #E3D2CB;
+      --blush-line: #F2C4C1;
+      --shell: 1200px;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "Montserrat", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      color: var(--espresso);
+      background: var(--cream);
+      line-height: 1.6;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, .serif { font-family: var(--serif); font-weight: 500; line-height: 1.12; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .shell { max-width: var(--shell); margin: 0 auto; padding: 0 20px; }
+    @media (min-width: 768px) { .shell { padding: 0 32px; } }
+    .eyebrow {
+      font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--espresso-soft); font-weight: 500;
+    }
+    .italic-heart { font-style: italic; color: var(--heart); }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      border-radius: 999px; padding: 14px 32px;
+      font-size: 14px; font-weight: 500; cursor: pointer;
+      transition: all .25s ease; border: 1px solid transparent;
+    }
+    .btn-solid { background: var(--espresso); color: var(--cream); }
+    .btn-solid:hover { background: var(--heart); }
+    .btn-outline { border-color: var(--espresso); color: var(--espresso); }
+    .btn-outline:hover { background: var(--espresso); color: var(--cream); }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 40;
+      border-bottom: 1px solid rgba(46,32,23,.1);
+      background: rgba(240,235,225,.85);
+      backdrop-filter: blur(12px);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+    .wordmark { font-family: var(--serif); font-size: 24px; letter-spacing: 0.12em; font-weight: 600; }
+    .nav-links { display: none; gap: 32px; align-items: center; }
+    .nav-links a { font-size: 14px; letter-spacing: .02em; color: var(--espresso-soft); transition: color .2s; }
+    .nav-links a:hover { color: var(--espresso); }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .ig-link { font-size: 13px; color: var(--espresso-soft); display: none; }
+    .ig-link:hover { color: var(--heart); }
+    @media (min-width: 768px) {
+      .nav-links { display: flex; }
+      .ig-link { display: inline; }
+    }
+
+    /* Hero */
+    .hero { text-align: center; padding: 96px 20px 80px; }
+    @media (min-width: 768px) { .hero { padding: 128px 20px 112px; } }
+    .hero h1 { font-size: 48px; margin: 20px auto 0; max-width: 760px; letter-spacing: -0.01em; }
+    @media (min-width: 768px) { .hero h1 { font-size: 72px; } }
+    .hero .sub { margin: 24px auto 0; max-width: 460px; color: var(--espresso-soft); }
+    .hero .btn { margin-top: 36px; }
+
+    /* Section headers */
+    .section { padding: 56px 0; }
+    @media (min-width: 768px) { .section { padding: 80px 0; } }
+    .sec-head { margin-bottom: 40px; }
+    .sec-head h2 { font-size: 30px; margin-top: 8px; }
+    @media (min-width: 768px) { .sec-head h2 { font-size: 36px; } }
+    .flex-between { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .see-all { font-size: 14px; color: var(--espresso-soft); border-bottom: 1px solid var(--espresso); padding-bottom: 2px; }
+    .see-all:hover { color: var(--heart); border-color: var(--heart); }
+
+    /* Product grid */
+    .grid-products { display: grid; grid-template-columns: 1fr; gap: 40px 24px; }
+    @media (min-width: 640px) { .grid-products { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .grid-products { grid-template-columns: repeat(3, 1fr); } }
+    .card { display: block; }
+    .card .thumb {
+      position: relative; aspect-ratio: 3/4; overflow: hidden;
+      border-radius: 16px; background: var(--surface-2);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 24px rgba(46,32,23,.06);
+    }
+    .card .thumb .ph { font-family: var(--serif); font-style: italic; color: var(--espresso-soft); font-size: 15px; opacity: .7; }
+    .card .tag {
+      position: absolute; left: 12px; top: 12px;
+      background: rgba(240,235,225,.9); border-radius: 999px;
+      padding: 5px 10px; font-size: 10px; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--espresso-soft);
+    }
+    .card h3 { font-size: 20px; margin-top: 14px; }
+    .card .blurb { font-size: 14px; color: var(--espresso-soft); margin-top: 6px; }
+    .card .row { display: flex; align-items: center; justify-content: space-between; margin-top: 12px; }
+    .card .price { font-weight: 500; }
+    .swatches { display: flex; gap: 6px; }
+    .swatch { width: 18px; height: 18px; border-radius: 999px; border: 1px solid rgba(46,32,23,.12); }
+
+    /* Story */
+    .story { background: var(--surface); }
+    .story-grid { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
+    @media (min-width: 768px) { .story-grid { grid-template-columns: 1fr 1fr; gap: 56px; } }
+    .story-img {
+      aspect-ratio: 4/5; border-radius: 20px; background: var(--surface-2);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif); font-style: italic; color: var(--espresso-soft);
+      box-shadow: 0 8px 24px rgba(46,32,23,.06); text-align: center; padding: 24px;
+    }
+    .story h2 { font-size: 30px; margin-top: 8px; }
+    @media (min-width: 768px) { .story h2 { font-size: 40px; } }
+    .story p { margin-top: 20px; color: var(--espresso-soft); max-width: 46ch; }
+    .story .btn { margin-top: 28px; }
+
+    /* Shop by colour */
+    .colour-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 24px; }
+    @media (min-width: 768px) { .colour-grid { grid-template-columns: repeat(4, 1fr); } }
+    .colour-chip {
+      border-radius: 16px; overflow: hidden; background: var(--surface-2);
+      aspect-ratio: 3/4; position: relative; cursor: pointer;
+      transition: transform .3s ease; border: 1px solid var(--line);
+    }
+    .colour-chip:hover { transform: translateY(-4px); }
+    .colour-chip .fill { position: absolute; inset: 0; }
+    .colour-chip .label {
+      position: absolute; left: 12px; bottom: 12px;
+      background: rgba(240,235,225,.92); border-radius: 999px;
+      padding: 5px 12px; font-size: 12px; color: var(--espresso);
+    }
+
+    /* Size guide */
+    .size-wrap { max-width: 720px; margin: 0 auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 24px; }
+    th, td { text-align: left; padding: 12px 12px 12px 0; border-bottom: 1px solid var(--line); }
+    th { font-weight: 600; color: var(--espresso); }
+    td { color: var(--espresso-soft); }
+    td:first-child { font-family: var(--serif); color: var(--espresso); }
+    .size-note {
+      margin-top: 20px; border-radius: 16px; background: var(--surface-2);
+      padding: 16px 18px; font-size: 14px; color: var(--espresso-soft);
+    }
+
+    /* Reviews */
+    .reviews { text-align: center; }
+    .review-empty {
+      max-width: 440px; margin: 32px auto 0; border-radius: 20px;
+      border: 1px solid var(--blush-line); background: var(--surface);
+      padding: 36px 32px; box-shadow: 0 8px 24px rgba(46,32,23,.05);
+    }
+    .review-empty h3 { font-size: 22px; }
+    .review-empty p { margin-top: 12px; color: var(--espresso-soft); font-size: 15px; }
+    .review-empty .btn { margin-top: 20px; }
+
+    /* Contact band */
+    .band {
+      text-align: center; background: var(--espresso); color: var(--cream);
+      border-radius: 24px; padding: 56px 24px; margin: 0 20px;
+    }
+    .band h2 { font-size: 30px; }
+    @media (min-width: 768px) { .band h2 { font-size: 40px; } }
+    .band p { margin: 16px auto 0; max-width: 440px; color: rgba(240,235,225,.75); }
+    .band .btn { margin-top: 28px; background: var(--cream); color: var(--espresso); }
+    .band .btn:hover { background: var(--heart); color: var(--cream); }
+
+    /* Footer */
+    footer { margin-top: 96px; border-top: 1px solid var(--line); background: var(--surface); }
+    .foot-grid { display: grid; grid-template-columns: 1fr; gap: 40px; padding: 56px 0; }
+    @media (min-width: 768px) { .foot-grid { grid-template-columns: repeat(4, 1fr); } }
+    .foot-grid h4 { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--espresso-soft); margin-bottom: 16px; }
+    .foot-grid ul { list-style: none; }
+    .foot-grid li { margin-bottom: 10px; }
+    .foot-grid a { font-size: 14px; color: var(--espresso-soft); }
+    .foot-grid a:hover { color: var(--heart); }
+    .foot-brand .wordmark { margin-bottom: 12px; display: inline-block; }
+    .foot-brand p { font-size: 14px; color: var(--espresso-soft); max-width: 30ch; }
+    .foot-bottom { border-top: 1px solid var(--line); padding: 20px 0; text-align: center; font-size: 12px; color: var(--espresso-soft); }
+
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="shell nav">
+      <a href="#top" class="wordmark">HER ERA</a>
+      <nav class="nav-links">
+        <a href="#shop">Shop</a>
+        <a href="#story">Our Story</a>
+        <a href="#size">Size guide</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <a class="ig-link" href="https://instagram.com/herera.wardrobe" target="_blank" rel="noreferrer">@herera.wardrobe</a>
+        <a href="#shop" class="btn btn-solid" style="padding:10px 22px">Shop now</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <p class="eyebrow">The Debut Era</p>
+      <h1>Defined <span class="italic-heart">by Her.</span></h1>
+      <p class="sub">Quietly confident, softly feminine — pieces made for every era of her.</p>
+      <a href="#shop" class="btn btn-solid">Explore the collection →</a>
+    </section>
+
+    <!-- Shop -->
+    <section id="shop" class="section">
+      <div class="shell">
+        <div class="sec-head flex-between reveal">
+          <div>
+            <p class="eyebrow">Collection</p>
+            <h2>The pieces that start it</h2>
+          </div>
+          <a href="#shop" class="see-all">See all →</a>
+        </div>
+        <div class="grid-products">
+          <!-- Dolly Skirt -->
+          <a class="card reveal" href="#contact">
+            <div class="thumb">
+              <span class="tag">Imagery coming soon</span>
+              <span class="ph">Dolly Skirt</span>
+            </div>
+            <h3>Dolly Skirt</h3>
+            <p class="blurb">A lightly flared satin skirt with a high, waist-defining rise — airy yet neat.</p>
+            <div class="row">
+              <span class="price">349,000₫</span>
+              <span class="swatches">
+                <span class="swatch" style="background:#8F5F38" title="Brownie"></span>
+                <span class="swatch" style="background:#E4CEB7" title="Champagne"></span>
+                <span class="swatch" style="background:#ECE6D8" title="Ivory Polkadot"></span>
+                <span class="swatch" style="background:#A9C7BF" title="Mint Polkadot"></span>
+              </span>
+            </div>
+          </a>
+          <!-- Ivy Lace Skirt -->
+          <a class="card reveal" href="#contact">
+            <div class="thumb">
+              <span class="tag">Imagery coming soon</span>
+              <span class="ph">Ivy Lace Skirt</span>
+            </div>
+            <h3>Ivy Lace Skirt</h3>
+            <p class="blurb">A feminine lace-trimmed skirt — soft, delicate, and easy to style.</p>
+            <div class="row">
+              <span class="price">319,000₫</span>
+              <span class="swatches">
+                <span class="swatch" style="background:#ECE6D8" title="Cream"></span>
+                <span class="swatch" style="background:#2A2524" title="Black"></span>
+                <span class="swatch" style="background:#6E4B38" title="Brown"></span>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop by colour -->
+    <section class="section" style="padding-top:0">
+      <div class="shell">
+        <div class="sec-head reveal">
+          <p class="eyebrow">Shop the look</p>
+          <h2>Shop by colour</h2>
+          <p style="color:var(--espresso-soft);margin-top:8px">Tap a colour to view details and pick your size.</p>
+        </div>
+        <div class="colour-grid reveal">
+          <a class="colour-chip" href="#contact"><span class="fill" style="background:#8F5F38"></span><span class="label">Brownie</span></a>
+          <a class="colour-chip" href="#contact"><span class="fill" style="background:#E4CEB7"></span><span class="label">Champagne</span></a>
+          <a class="colour-chip" href="#contact"><span class="fill" style="background:#A9C7BF"></span><span class="label">Mint Polkadot</span></a>
+          <a class="colour-chip" href="#contact"><span class="fill" style="background:#2A2524"></span><span class="label" style="background:rgba(240,235,225,.92)">Black</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story -->
+    <section id="story" class="story section">
+      <div class="shell story-grid">
+        <div class="story-img reveal">A quiet moment,<br/>softly her own</div>
+        <div class="reveal">
+          <p class="eyebrow">Our Story</p>
+          <h2>Her own era</h2>
+          <p>HER ERA believes every woman has an era of her own — a season to feel confident and fully herself. Our designs follow a modern-minimalist spirit: clean silhouettes, soft fabrics, elegant yet effortless.</p>
+          <p>Every woman has an era that is entirely her own. HER ERA creates the pieces she lives it in — confident, feminine, unmistakably herself.</p>
+          <a href="#contact" class="btn btn-outline">Read our story</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Size guide -->
+    <section id="size" class="section">
+      <div class="shell size-wrap reveal">
+        <div class="sec-head" style="text-align:center;margin-bottom:8px">
+          <p class="eyebrow">Find your fit</p>
+          <h2>Size guide</h2>
+        </div>
+        <table>
+          <thead>
+            <tr><th>Size</th><th>Waist (cm)</th><th>Hips (cm)</th><th>Height (cm)</th><th>Weight (kg)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>S</td><td>68–74</td><td>86–96</td><td>150–160</td><td>43–50</td></tr>
+            <tr><td>M</td><td>74–80</td><td>92–102</td><td>155–165</td><td>50–57</td></tr>
+            <tr><td>L</td><td>80–86</td><td>99–109</td><td>158–170</td><td>57–65</td></tr>
+          </tbody>
+        </table>
+        <div class="size-note">
+          <strong>How to measure:</strong> measure your waist at the narrowest point and your hips at the fullest, keeping the tape parallel to the floor. Between two sizes? Size up for comfort — or message us and we'll help you choose.
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section reviews">
+      <div class="shell">
+        <p class="eyebrow reveal">From our women</p>
+        <h2 class="reveal" style="font-size:30px;margin-top:8px">What customers say</h2>
+        <div class="review-empty reveal">
+          <h3>Be the first HER ERA woman?</h3>
+          <p>We treasure every honest word. Message HER ERA with a photo of your look — your review will appear right here.</p>
+          <a href="https://instagram.com/herera.wardrobe" target="_blank" rel="noreferrer" class="btn btn-solid">Share a review on Instagram</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact band -->
+    <section id="contact" class="section" style="padding-top:0">
+      <div class="band reveal">
+        <p class="eyebrow" style="color:rgba(240,235,225,.6)">Let's talk</p>
+        <h2 style="color:var(--cream);margin-top:8px">Ready to find your era?</h2>
+        <p>Message us on Instagram to order, ask about sizing, or just say hi. We'll help you pick the piece that feels most like you.</p>
+        <a href="https://instagram.com/herera.wardrobe" target="_blank" rel="noreferrer" class="btn">Message HER ERA →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell foot-grid">
+      <div class="foot-brand">
+        <span class="wordmark">HER ERA</span>
+        <p>Satin skirts and softly feminine pieces, made for every era of her. Defined by Her.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#shop">All products</a></li>
+          <li><a href="#shop">Dolly Skirt</a></li>
+          <li><a href="#shop">Ivy Lace Skirt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#size">Size guide</a></li>
+          <li><a href="https://instagram.com/herera.wardrobe" target="_blank" rel="noreferrer">Ask about sizing</a></li>
+          <li><a href="#story">The HER ERA story</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://instagram.com/herera.wardrobe" target="_blank" rel="noreferrer">Instagram @herera.wardrobe</a></li>
+          <li><a href="#contact">Shopping &amp; return policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">© <span id="year"></span> HER ERA — Defined by Her.</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
